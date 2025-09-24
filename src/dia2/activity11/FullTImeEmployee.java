@@ -1,12 +1,12 @@
 package dia2.activity11;
 
-public class FullTImeEmployee extends Employee implements Bonusable{
+public class FullTimeEmployee extends Employee implements Bonusable{
     private double baseSalary;
 
     
 
-    public FullTImeEmployee(String id, String name, double baseSalary) {
-        super(id, name);
+    public FullTimeEmployee(String name, String id, double baseSalary) {
+        super(name, id);
         this.baseSalary = baseSalary;
     }
 
