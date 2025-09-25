@@ -1,4 +1,6 @@
-package Spike;
+package Spike.activity2;
+
+import Spike.activity1.Person;
 
 import java.util.ArrayList;
 

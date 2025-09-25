@@ -1,4 +1,4 @@
-package Spike;
+package Spike.activity2;
 
 public class Person {
 
@@ -21,7 +21,7 @@ public class Person {
         this.age = age;
     }
 
-    public Person (String name, int age) {
+    public Person(String name, int age) {
         this.name= name;
         this.age= age;
     }
