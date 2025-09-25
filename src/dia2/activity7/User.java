@@ -15,7 +15,7 @@ public class User implements Storable{
 
     @Override
     public String key() {
-        
+        return id;
     }
 
 
@@ -40,6 +40,11 @@ public class User implements Storable{
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    @Override
+    public String toString() {
+        return "id=" + id + ", name=" + name;
     }
 
     
