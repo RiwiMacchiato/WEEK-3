@@ -15,4 +15,10 @@ public class Student extends Person{
     public void setStudentId(int studentId) {
         this.studentId = studentId;
     }
+
+    @Override
+    public String getDescription() {
+        return "Estudiante: " + getName() + ", Documento: " + getId() + ", ID Estudiante: " + studentId;
+
+    }
 }

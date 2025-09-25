@@ -25,5 +25,6 @@ public abstract class Person {
         this.id = id;
     }
     
+    abstract String getDescription();
 
 }

@@ -49,6 +49,7 @@ public class Main {
                 if (idPString.isBlank()) {
                     JOptionPane.showMessageDialog(frame, "Error, ingresa un numero de documento valido", "Adertencia",
                             JOptionPane.WARNING_MESSAGE);
+                            continue;
                 }
 
                 try {
@@ -62,6 +63,7 @@ public class Main {
                 } catch (NumberFormatException ea) {
                     JOptionPane.showMessageDialog(frame, "Error, el numero ingresado no es valido", "Error",
                             JOptionPane.ERROR_MESSAGE);
+                            continue;
                 }
 
                 Person findingStudent = personRepo.findById(idPInt);
@@ -109,6 +111,7 @@ public class Main {
                 if (idSString.isBlank()) {
                     JOptionPane.showMessageDialog(frame, "Error, ingresa un id de estudiante valido", "Adertencia",
                             JOptionPane.WARNING_MESSAGE);
+                            continue;
                 }
 
                 try {
@@ -122,6 +125,7 @@ public class Main {
                 } catch (NumberFormatException ea) {
                     JOptionPane.showMessageDialog(frame, "Error, el numero ingresado no es valido", "Error",
                             JOptionPane.ERROR_MESSAGE);
+                    continue;
                 }
 
                 boolean foundStudent = false;
@@ -177,6 +181,116 @@ public class Main {
             JOptionPane.showMessageDialog(frame, scroll);
 
         });
+
+        removeStudent.addActionListener(b -> {
+
+            if (personRepo.findAll().isEmpty()) {
+                JOptionPane.showMessageDialog(frame, "No hay estudiantes registrados.", "Advertencia",
+                        JOptionPane.WARNING_MESSAGE);
+                return;
+            }
+
+             boolean passIdP = false;
+            String idPString;
+            int idPInt = 0;
+
+            do {
+                idPString = JOptionPane.showInputDialog(frame, "Ingrese el numero de documento del estudiante que desea eliminar",
+                        "Ventana",
+                        JOptionPane.QUESTION_MESSAGE);
+
+                if (idPString == null) {
+                    return;
+                }
+
+                if (idPString.isBlank()) {
+                    JOptionPane.showMessageDialog(frame, "Error, ingresa un numero de documento valido", "Adertencia",
+                            JOptionPane.WARNING_MESSAGE);
+                            continue;
+                }
+
+                try {
+                    idPInt = Integer.parseInt(idPString);
+
+                    if(idPInt < 0){
+                        JOptionPane.showMessageDialog(frame, "Error, el numero tiene que ser positivo.", "Error", JOptionPane.ERROR_MESSAGE);
+                        continue;
+                    }
+                    
+                } catch (NumberFormatException ea) {
+                    JOptionPane.showMessageDialog(frame, "Error, el numero ingresado no es valido", "Error",
+                            JOptionPane.ERROR_MESSAGE);
+                            continue;
+                }
+
+                Person findingStudent = personRepo.findById(idPInt);
+
+                if(findingStudent != null){
+                    personRepo.delete(idPInt);
+                    JOptionPane.showMessageDialog(frame, "El estudiante con numero de documento #" + idPInt + " ha sido eliminado exitosamente.");
+                    passIdP = true;
+                } else {
+                    JOptionPane.showMessageDialog(frame, "Error, el usuario con numero de documento #" + idPInt + " no esta registrado","Error",JOptionPane.ERROR_MESSAGE);
+                }
+                
+            } while (!passIdP);
+
+        });
+        
+        findStudent.addActionListener(c -> {
+
+            if (personRepo.findAll().isEmpty()) {
+                JOptionPane.showMessageDialog(frame, "No hay estudiantes registrados.", "Advertencia",
+                        JOptionPane.WARNING_MESSAGE);
+                return;
+            }
+
+             boolean passIdP = false;
+            String idPString;
+            int idPInt = 0;
+
+            do {
+                idPString = JOptionPane.showInputDialog(frame, "Ingrese el numero de documento del estudiante que desea encontrar",
+                        "Ventana",
+                        JOptionPane.QUESTION_MESSAGE);
+
+                if (idPString == null) {
+                    return;
+                }
+
+                if (idPString.isBlank()) {
+                    JOptionPane.showMessageDialog(frame, "Error, ingresa un numero de documento valido", "Adertencia",
+                            JOptionPane.WARNING_MESSAGE);
+                            continue;
+                }
+
+                try {
+                    idPInt = Integer.parseInt(idPString);
+
+                    if(idPInt < 0){
+                        JOptionPane.showMessageDialog(frame, "Error, el numero tiene que ser positivo.", "Error", JOptionPane.ERROR_MESSAGE);
+                        continue;
+                    }
+                    
+                } catch (NumberFormatException ea) {
+                    JOptionPane.showMessageDialog(frame, "Error, el numero ingresado no es valido", "Error",
+                            JOptionPane.ERROR_MESSAGE);
+                            continue;
+                }
+
+                Person findingStudent = personRepo.findById(idPInt);
+
+                if(findingStudent != null){
+                    JOptionPane.showMessageDialog(frame, "Estudiante encontrado: \n" + findingStudent.getDescription());
+                    passIdP = true;
+                } else {
+                    JOptionPane.showMessageDialog(frame, "Error, el usuario con numero de documento #" + idPInt + " no esta registrado","Error",JOptionPane.ERROR_MESSAGE);
+                }
+                
+            } while (!passIdP);
+
+        });
+    
     }
 
     public Integer readInteger(String message, String title, int typeOfMessage, JFrame frame) {
