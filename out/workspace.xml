@@ -5,12 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d5431450-5601-4ee1-b2dc-a6b12efc4483" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Spike/activity2/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Spike/activity2/Person.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Spike/activity3/Agenda.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Spike/Agenda.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Spike/Agenda.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Spike/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Spike/activity1/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Spike/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Spike/activity1/Person.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Student_M_S/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Student_M_S/Person.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Student_M_S/Repository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Student_M_S/Student.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Student_M_S/StudentRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
